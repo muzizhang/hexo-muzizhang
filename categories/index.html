@@ -264,274 +264,126 @@
     </nav>
 </header>
 
-
-
-
-
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover  about-cover" style="background-image: url('/medias/cover.jpg')">
     <div class="container">
         <div class="row">
-            <div class="col s12 m12 l12">
+            <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
                 <div class="brand">
-                    <div class="description center-align post-title">
-                        categories
+                    <div class="title center-align">
+                    
+                        sunshine
+                    
+                    </div>
+
+                    <div class="description center-align">
+                    
+                        生活就是一场修行，修自己的耐心、恒心、平常心。人生，就是一边拥有，一边失去；一边选择，一边放弃。今天陌生的，是昨天熟悉的；现在记住的，是以后淡忘的。不是人生选择了你，而是你选择了人生。
+                    
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-
-
-<main class="container content">
-
-    
-    <!-- 文章内容详情 -->
-<div id="artDetail">
-    <div class="card">
-        <div class="card-content article-info">
-            
-            <div class="post-info">
-                
-
-                <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-12-20
-                </span>
-            </div>
-        </div>
-        <hr>
-        <div class="card-content article-card-content">
-            <div id="articleContent">
-                
-            </div>
-            <hr>
-
-            
-            <style>
-    #reward {
-        margin: 40px 0;
-        text-align: center;
-    }
-
-    #reward .reward-link {
-        font-size: 1.88rem;
-    }
-
-    #reward .btn-floating:hover {
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    #rewardModal {
-        width: 320px;
-        height: 350px;
-    }
-
-    #rewardModal .reward-title {
-        margin: 15px auto;
-        padding-bottom: 5px;
-    }
-
-    #rewardModal .modal-content {
-        padding: 10px;
-    }
-
-    #rewardModal .close {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        color: rgba(0, 0, 0, 0.5);
-        font-size: 1.3rem;
-        line-height: 20px;
-        cursor: pointer;
-    }
-
-    #rewardModal .reward-tabs {
-        margin: 0 auto;
-        width: 210px;
-    }
-
-    .reward-tabs .tabs {
-        height: 38px;
-        margin: 10px auto;
-        padding-left: 0;
-    }
-
-    .reward-tabs .tabs .tab {
-        height: 38px;
-        line-height: 38px;
-    }
-
-    .reward-tabs .tab a {
-        color: #fff;
-        background-color: #ccc;
-    }
-
-    .reward-tabs .tab a:hover {
-        color: #fff;
-    }
-
-    .reward-tabs .wechat-tab .active {
-        color: #fff;
-        background-color: #22AB38;
-    }
-
-    .reward-tabs .alipay-tab .active {
-        color: #fff;
-        background-color: #019FE8;
-    }
-
-    .reward-tabs .reward-img {
-        width: 210px;
-        height: 210px;
-    }
-</style>
-
-<div id="reward">
-    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
-
-    <!-- Modal Structure -->
-    <div id="rewardModal" class="modal">
-        <div class="modal-content">
-            <a class="close"><i class="fa fa-close"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
-            <div class="reward-content">
-                <div class="reward-tabs">
-                    <ul class="tabs">
-                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
-                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
-                    </ul>
-                    <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
-                    </div>
-                    <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </div>
 </div>
 
 <script>
-    $(function () {
-        $('#reward .reward-link').on('click', function () {
-            $('#rewardModal').openModal();
-        });
-
-        $('#rewardModal .close').on('click', function () {
-            $('#rewardModal').closeModal();
-        });
-    });
+// Dynamically switch banner pictures every day.
+$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
 </script>
-            
 
-            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-
-<div id="article-share">
-    
-    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
-    
-</div>
-
-<script src="/libs/share/js/social-share.min.js"></script>
-
-            <div class="reprint">
-                <p>
-                    <span class="reprint-tip">转载请注明: </span>
-                    <a href="http://muzizhang.github.io" class="b-link-green">muzizhang</a>
-                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/categories/index.html" class="b-link-green">categories</a>
-                </p>
-            </div>
-        </div>
-    </div>
+<main class="content">
 
     
 
-    
-
-    
-
-    
-
-    
-
-    
-
-<article id="prenext-posts" class="prev-next articles">
-    <div class="row article-row">
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">本篇</div>
-            <div class="card">
-                <a href="/categories/index.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="categories">
-                        
-                        <span class="card-title">categories</span>
-                    </div>
+<div id="category-cloud" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">文章分类</div>
+            <div class="tag-chips">
+                
+                
+                
+                <a href="/categories/Docker/" title="Docker: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " style="background-color: #F9EBEA;">Docker
+                        <span class="tag-length">1</span>
+                    </span>
                 </a>
-                <div class="card-content article-content">
-                    <div class="summary"></div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-20
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            木子
-                            
-                        </span>
-                    </div>
-                </div>
-
+                
+                
+                <a href="/categories/面向对象/" title="面向对象: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " style="background-color: #F5EEF8;">面向对象
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
                 
             </div>
         </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">本篇</div>
-            <div class="card">
-                <a href="/categories/index.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="categories">
-                        
-                        <span class="card-title">categories</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary"></div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-20
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            木子
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-            </div>
-        </div>
-        
     </div>
-</article>
 </div>
+
+    
+    <style type="text/css">
+    #category-radar {
+        width: 100%;
+        height: 360px;
+    }
+</style>
+
+<div class="container" data-aos="fade-up">
+    <div class="card">
+        <div id="category-radar" class="card-content"></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/libs/echarts/echarts.min.js"></script>
+<script type="text/javascript">
+    let radarChart = echarts.init(document.getElementById('category-radar'));
+
+    
+
+    let option = {
+        title: {
+            left: 'center',
+            text: '文章分类雷达图',
+            textStyle: {
+                fontWeight: 500,
+                fontSize: 22
+            }
+        },
+        tooltip: {},
+        radar: {
+            name: {
+                textStyle: {
+                    color: '#3C4858'
+                }
+            },
+            indicator: [{"name":"Docker","max":2},{"name":"面向对象","max":2}],
+            nameGap: 5,
+            center: ['50%','55%'],
+            radius: '66%'
+        },
+        series: [{
+            type: 'radar',
+            color: ['#3ecf8e'],
+            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+            data : [
+                {
+                    value : [1,1],
+                    name : '文章分类数量'
+                }
+            ]
+        }]
+    };
+
+    radarChart.setOption(option);
+</script>
     
 
 </main>
-
 
 <!-- <footer class="page-footer bg-color">
     <div class="container row center-align">
