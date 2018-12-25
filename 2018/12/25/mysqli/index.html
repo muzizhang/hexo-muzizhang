@@ -5,8 +5,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Vue-组件, 个人博客">
-    <meta name="description" content="vue组件基础">
+    <meta name="keywords" content="mysqli, 个人博客">
+    <meta name="description" content="mysqli介绍适用于 PHP5, PHP7代表 PHP 和 MySQL 数据库之间的一个连接    [短暂连接]
+常用指令
+全文的 mysqli $link 指的是 mysqli_connect(‘localhost’,’root’,’1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Vue-组件 | muzizhang</title>
+    <title>mysqli | muzizhang</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -268,13 +270,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('https://shopuploadimage.oss-cn-beijing.aliyuncs.com/hexo/vue.png?x-oss-process=style/hexo-img')">
+<div class="bg-cover post-cover" style="background-image: url('https://shopuploadimage.oss-cn-beijing.aliyuncs.com/hexo/mysql.jpg?x-oss-process=style/hexo-img')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Vue-组件
+                        mysqli
                     </div>
                 </div>
             </div>
@@ -294,12 +296,12 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/vue/" target="_blank">
-                    <span class="chip bg-color">vue</span>
+                <a href="/tags/mysql/" target="_blank">
+                    <span class="chip bg-color">mysql</span>
                 </a>
                 
-                <a href="/tags/vue-component/" target="_blank">
-                    <span class="chip bg-color">vue-component</span>
+                <a href="/tags/mysqli/" target="_blank">
+                    <span class="chip bg-color">mysqli</span>
                 </a>
                 
             </div>
@@ -309,22 +311,51 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/Vue/" class="post-category" target="_blank">
-                        Vue
+                    <a href="/categories/mysql/" class="post-category" target="_blank">
+                        mysql
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-12-21
+                    <i class="fa fa-clock-o fa-fw"></i>2018-12-25
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h1><h2 id="组件基础"><a href="#组件基础" class="headerlink" title="组件基础"></a>组件基础</h2>
+                <h1 id="mysqli"><a href="#mysqli" class="headerlink" title="mysqli"></a>mysqli</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>适用于 PHP5, PHP7<br>代表 PHP 和 MySQL 数据库之间的一个连接    <strong>[短暂连接]</strong></p>
+<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><blockquote>
+<p>全文的 <code>mysqli $link</code> 指的是 mysqli_connect(‘localhost’,’root’,’123’)</p>
+</blockquote>
+<ol>
+<li><p>连接数据库</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysqli_connect(<span class="string">'主机地址'</span>,<span class="string">'用户名'</span>,<span class="string">'密码'</span>)</span><br><span class="line">例:</span><br><span class="line">mysqli_connect(<span class="string">'localhost'</span>,<span class="string">'root'</span>,<span class="string">'123'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>切换数据库</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  面向对象风格</span></span><br><span class="line">mysqli::select_db(数据库名称)</span><br><span class="line">例：</span><br><span class="line">mysqli::select_db(<span class="string">'test'</span>);</span><br><span class="line"><span class="comment">//  过程化风格</span></span><br><span class="line">mysqli_select_db(mysqli $link,数据库名称)</span><br><span class="line">例：</span><br><span class="line">mysqli_select_db(mysqli_connect(<span class="string">'localhost'</span>,<span class="string">'root'</span>,<span class="string">'123'</span>),<span class="string">'test'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行SQL语句</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 面向对象风格</span></span><br><span class="line">mysqli::query(<span class="string">'SQL语句'</span>)</span><br><span class="line">例：</span><br><span class="line">mysqli::query($sql);</span><br><span class="line"><span class="comment">// 过程化风格</span></span><br><span class="line">mysqli_query(mysqli $link , <span class="string">'sql 语句'</span>)</span><br><span class="line">例：</span><br><span class="line">mysqli_query(mysqli_connect(<span class="string">'localhost'</span>,<span class="string">'root'</span>,<span class="string">'123'</span>) , $sql)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>捕获SQL错误</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  面向对象风格</span></span><br><span class="line">$mysqli-&gt;error;</span><br><span class="line"><span class="comment">//  过程化风格</span></span><br><span class="line">mysqli_error(mysqli $link)</span><br><span class="line">例：</span><br><span class="line">mysqli_error(mysqli_connect(<span class="string">'localhost'</span>,<span class="string">'root'</span>,<span class="string">'123'</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>所有查询的数据</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mysqli_fetch_array(索引取值,展示类型[`MYSQLI_ASSOC`])    </span><br><span class="line">[`MYSQLI_ASSOC`] 关联数组</span><br><span class="line">[`MYSQLI_NUM`]   索引数组</span><br><span class="line">[`MYSQLI_BOTH`]  同时存在字段索引和数字索引</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询结果返回到一个数组中，都是返回第一行然后指下移一行。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqli_fetch_assoc($result)   [用关键字索引取值]</span><br><span class="line">mysqli_fetch_row($result)     [用数字索引取值]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>受影响的行数</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  面向对象风格</span></span><br><span class="line">$mysqli-&gt;affected_rows;</span><br><span class="line"><span class="comment">//  过程化风格</span></span><br><span class="line">mysqli_affected_rows(mysqli $link)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关闭mysql数据库连接</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  面向对象风格</span></span><br><span class="line">mysqli::close(void) </span><br><span class="line">`暂时未搞懂`</span><br><span class="line"><span class="comment">//  过程化风格</span></span><br><span class="line">mysqli_close(mysql $link)</span><br></pre></td></tr></table></figure></li>
+</ol>
+
             </div>
             <hr>
 
@@ -462,7 +493,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://muzizhang.github.io" class="b-link-green">muzizhang</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/12/21/vue-zu-jian/" class="b-link-green">Vue-组件</a>
+                    <a href="/2018/12/25/mysqli/" class="b-link-green">mysqli</a>
                 </p>
             </div>
         </div>
@@ -484,7 +515,56 @@
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
+            <div class="card">
+                <a href="/2018/12/25/mysqli/">
+                    <div class="card-image">
+                        
+                        <img src="https://shopuploadimage.oss-cn-beijing.aliyuncs.com/hexo/mysql.jpg?x-oss-process=style/hexo-img" class="responsive-img" alt="mysqli">
+                        
+                        <span class="card-title">mysqli</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">mysqli介绍适用于 PHP5, PHP7代表 PHP 和 MySQL 数据库之间的一个连接    [短暂连接]
+常用指令
+全文的 mysqli $link 指的是 mysqli_connect(‘localhost’,’root’,’1</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/mysql/" class="post-category" target="_blank">
+                                    mysql
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/mysql/" target="_blank">
+                        <span class="chip bg-color">mysql</span>
+                    </a>
+                    
+                    <a href="/tags/mysqli/" target="_blank">
+                        <span class="chip bg-color">mysqli</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
                 <a href="/2018/12/21/vue-cli3/">
                     <div class="card-image">
@@ -501,9 +581,9 @@
 一套完全图形化的创建和管理 Vue.js 项目的用户界面
 通过 @vue/cli + @vue/c</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -525,73 +605,6 @@
                     
                     <a href="/tags/vue-cli/" target="_blank">
                         <span class="chip bg-color">vue-cli</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">下一篇</div>
-            <div class="card">
-                <a href="/2018/12/20/mian-xiang-dui-xiang-bian-cheng/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="面向对象编程">
-                        
-                        <span class="card-title">面向对象编程</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">面向对象编程编程方式：面向过程和面向对象
-OOP（面向对象程序设计）
-
-类和对象
-命名空间
-类的自动加载
-魔术方法
-静态成员
-异常
-继承
-
-类的三大特性：
-
-封装
-继承
-多态
-
-类
-一般类名首字母大写
-一个类对应一个文件，文件名和类名相同
-</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-20
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/面向对象/" class="post-category" target="_blank">
-                                    面向对象
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/php/" target="_blank">
-                        <span class="chip bg-color">php</span>
-                    </a>
-                    
-                    <a href="/tags/OOP/" target="_blank">
-                        <span class="chip bg-color">OOP</span>
                     </a>
                     
                 </div>
