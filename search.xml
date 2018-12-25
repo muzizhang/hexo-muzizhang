@@ -3,6 +3,56 @@
   
     
     <entry>
+      <title>Vue-CLI3</title>
+      <link href="/2018/12/21/vue-cli3/"/>
+      <url>/2018/12/21/vue-cli3/</url>
+      
+        <content type="html"><![CDATA[<h1 id="vue-cli3"><a href="#vue-cli3" class="headerlink" title="vue-cli3"></a>vue-cli3</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Vue CLI 是一个基于 <code>Vue.js</code>进行快速开发的完整系统，提供：</p><ul><li>通过 <code>@vue/cli</code> 搭建交互式的项目脚手架</li><li>一套完全图形化的创建和管理 Vue.js 项目的用户界面</li><li>通过 <code>@vue/cli</code> + <code>@vue/cli-service-global</code> 快速开始零配置原型开发</li><li>运行时依赖，（<code>@vue/cli-service</code>）<ul><li>可升级</li><li>基于 webpack 构建，并带有合理的默认配置</li><li>可以通过项目内的配置文件进行配置</li><li>可以通过插件进行扩展</li></ul></li></ul><p>Vue CLI 致力于将 Vue 生态中的工具基础标准化，它确保看各种构建工具能够基于智能的默认配置即可平稳衔接。也为每个工具提供了调整配置的灵活性，无需 eject。</p><h3 id="CLI"><a href="#CLI" class="headerlink" title="CLI"></a>CLI</h3><p>CLI（<code>@vue/cli</code>）是一个全局安装的 npm 包，提供了终端里的 <code>vue</code>命令。</p><p>可以通过 <code>vue create</code> 快速创建一个新项目的脚手架，</p><p>或者直接通过 <code>vue serve</code> 构建新想法的原型。</p><p>使用<code>vue ui</code>命令，通过 一套图形化界面管理项目。</p><h3 id="CLI服务"><a href="#CLI服务" class="headerlink" title="CLI服务"></a>CLI服务</h3><p>CLI服务（<code>@vue/cli-service</code>）是一个开发环境依赖。</p><p>是一个 <code>npm 包</code>，局部安装在每个 <code>@vue/cli</code>创建的项目中</p><p><strong>CLI服务是构建与<code>webpack</code>和 <code>webpack-dev-server</code>之上的，包含了</strong></p><ul><li>加载其它 CLI 插件的核心服务</li><li>一个针对绝大部分应用优化过的内部的  webpack 配置</li><li>项目内部的 <code>vue-cli-service</code>命令，提供 <code>serve</code>、<code>build</code>、和<code>inspect</code> 命令</li></ul><p>注：CLI 服务 涵盖了 <code>@vue/cli-service</code> 的具体用法</p><h3 id="CLI-插件"><a href="#CLI-插件" class="headerlink" title="CLI 插件"></a>CLI 插件</h3><p>CLI插件是向 Vue 项目提供可选功能的 npm 包，</p><p>​      例： Babel/TypeScript 转译、ESLint 集成、单元检测和 end-to-end 测试</p><p>Vue CLI 插件的名字以 <code>@vue/cli-plugin-</code>（内建插件）或 <code>vue-cli-plugin-</code> （社区插件）开头，容易使用</p><p>在项目中运行 <code>vue-cli-service</code>命令时，会自动解析并加载 <code>package.json</code>中列出的所有的 CLI 插件</p><p>它们也可以被归成一组可复用的 preset。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><blockquote><p>关于 vue-cli 旧版本</p><p>Vue CLI 的包名称由 <code>vue-cli</code> 改成 <code>@vue-cli</code>。如果已经全局安装了旧版本的  <code>vue-cli</code>（1.x 或 2.x），需要先通过 <code>npm uninstall vue-cli -g</code> 或 <code>yarn global remove vue-cli</code> 进行卸载旧版本。</p></blockquote><blockquote><p>Node 版本要求</p><p>Vue CLI 需要 <code>Node.js</code> 8.9 或者更高版本</p></blockquote><p>安装 vue-cli 脚手架</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br><span class="line"><span class="comment"># OR</span></span><br><span class="line">yarn global add @vue/cli</span><br></pre></td></tr></table></figure><p>安装完成后，检测其是否安装成功。使用命令检查其版本是否正确：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vue --version</span><br><span class="line"><span class="comment"># OR</span></span><br><span class="line">vue -V</span><br></pre></td></tr></table></figure><h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="快速原型开发"><a href="#快速原型开发" class="headerlink" title="快速原型开发"></a>快速原型开发</h2><p>可以使用 <code>vue serve</code> 和 <code>vue build</code> 命令对单个 <code>*.vue</code> 文件进行快速原型开发，安装全局扩展：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli-service-global</span><br></pre></td></tr></table></figure><p><code>vue serve</code> 缺点：需要安装全局依赖，使得在不同机器上的一致性不能得到保证。</p><h3 id="vue-serve"><a href="#vue-serve" class="headerlink" title="vue serve"></a>vue serve</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Usage: serve [options] [entry]</span><br><span class="line"></span><br><span class="line">在开发环境模式下零配置为 .js 或 .vue 文件启动一个服务器</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line"></span><br><span class="line">  -o, --open  打开浏览器</span><br><span class="line">  -c, --copy  将本地 URL 复制到剪切板</span><br><span class="line">  -h, --<span class="built_in">help</span>  输出用法信息</span><br></pre></td></tr></table></figure><p><strong>需要在开发环境下，创建 main.js, index.js, App.vue or app.vue 等文件名的文件</strong></p><p>例：创建一个 <code>App.vue</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">        &lt;h1&gt;</span><br><span class="line">            Hello</span><br><span class="line">        &lt;/h1&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure><p>然后在<code>App.vue</code>文件下，</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue serve</span><br></pre></td></tr></table></figure><p>或指定入口文件：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue serve hello.vue</span><br></pre></td></tr></table></figure><p>还可以提供一个 <code>index.html</code> 、<code>package.json</code>  安装并使用本地依赖。</p><p><code>vue build</code> 同 <code>vue serve</code> 使用方法</p><h2 id="创建一个项目"><a href="#创建一个项目" class="headerlink" title="创建一个项目"></a>创建一个项目</h2><p>vue create</p><p>运行以下命令创建新项目：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue new hello-world</span><br></pre></td></tr></table></figure><blockquote><p>如果你在 Windows 上通过 minTTY 使用 Git Bash  创建项目， 交互提示符并不进行工作。必须通过  <code>winpty vue.cmd create hello-world</code> 启动创建项目命令。</p><p>对于 minTTY  这个我并不是很了解，但是 之前我入过一个坑：</p><p>使用 <code>Git Bash</code> 创建 vue 项目，</p><p>命令为  <code>vue create</code> 无法去手动选择一些特性，退出也不是很方便。</p><h5 id="如果创建项目使用的不是-cmd-命令，而是使用-Git-Bash-创建，请使用-winpty-vue-cmd-create-项目名称-创建项目"><a href="#如果创建项目使用的不是-cmd-命令，而是使用-Git-Bash-创建，请使用-winpty-vue-cmd-create-项目名称-创建项目" class="headerlink" title="如果创建项目使用的不是 cmd 命令，而是使用 Git Bash 创建，请使用  winpty vue.cmd create 项目名称 创建项目"></a>如果创建项目使用的不是 cmd 命令，而是使用 Git Bash 创建，请使用  <code>winpty vue.cmd create 项目名称</code> 创建项目</h5></blockquote><p>手动选择特性： <a href="https://cli.vuejs.org/zh/guide/creating-a-project.html#vue-create" target="_blank" rel="noopener">vue-cli 手动选择特性</a></p><h2 id="插件-和-Preset"><a href="#插件-和-Preset" class="headerlink" title="插件 和 Preset"></a>插件 和 Preset</h2><h4 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h4><p>Vue CLI 使用了一套基于插件的架构。查看  新建项目 根目录的 package.json ，发现依赖都是以 <code>@vue/cli-plugin-</code> 开头的。插件可以修改 webpack 的内部配置，也可以向  <code>vue-cli-service</code> 注入命令。</p><blockquote><p>可以通过 <code>vue ui</code> 命令使用 GUI 安装和管理插件。</p></blockquote><p><strong>在现有的项目中安装</strong></p><p>使用 <code>vue create</code>  创建新项目时，有的插件会根据选择的特性进行安装。如果想在一个已经创建好的项目中安装插件，使用</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue add [@vue/eslint]扩展名称</span><br></pre></td></tr></table></figure><blockquote><p>注：在使用 <code>vue add</code> 添加扩展之前，将最新的状态进行提交，因为该命令可能调用插件的文件生成器并更改现有的文件。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+            <tag> vue-cli </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Vue-组件</title>
+      <link href="/2018/12/21/vue-zu-jian/"/>
+      <url>/2018/12/21/vue-zu-jian/</url>
+      
+        <content type="html"><![CDATA[<h1 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h1><h2 id="组件基础"><a href="#组件基础" class="headerlink" title="组件基础"></a>组件基础</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> Vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+            <tag> vue-component </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>面向对象编程</title>
       <link href="/2018/12/20/mian-xiang-dui-xiang-bian-cheng/"/>
       <url>/2018/12/20/mian-xiang-dui-xiang-bian-cheng/</url>

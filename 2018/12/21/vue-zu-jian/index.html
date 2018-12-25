@@ -5,8 +5,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="标签: php, 个人博客">
-    <meta name="description" content="标签: php | muzizhang">
+    <meta name="keywords" content="Vue-组件, 个人博客">
+    <meta name="description" content="vue组件基础">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>标签: php | muzizhang</title>
+    <title>Vue-组件 | muzizhang</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -264,138 +264,347 @@
     </nav>
 </header>
 
-<div class="bg-cover  about-cover" style="background-image: url('/medias/cover.jpg')">
+
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('https://shopuploadimage.oss-cn-beijing.aliyuncs.com/hexo/vue.png?x-oss-process=style/hexo-img')">
     <div class="container">
         <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+            <div class="col s12 m12 l12">
                 <div class="brand">
-                    <div class="title center-align">
-                    
-                        sunshine
-                    
-                    </div>
-
-                    <div class="description center-align">
-                    
-                        生活就是一场修行，修自己的耐心、恒心、平常心。人生，就是一边拥有，一边失去；一边选择，一边放弃。今天陌生的，是昨天熟悉的；现在记住的，是以后淡忘的。不是人生选择了你，而是你选择了人生。
-                    
+                    <div class="description center-align post-title">
+                        Vue-组件
                     </div>
                 </div>
             </div>
         </div>
-        
+    </div>
+</div>
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/vue/" target="_blank">
+                    <span class="chip bg-color">vue</span>
+                </a>
+                
+                <a href="/tags/vue-component/" target="_blank">
+                    <span class="chip bg-color">vue-component</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/Vue/" class="post-category" target="_blank">
+                        Vue
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2018-12-21
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h1><h2 id="组件基础"><a href="#组件基础" class="headerlink" title="组件基础"></a>组件基础</h2>
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <script>
-// Dynamically switch banner pictures every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
 </script>
+            
 
-<main class="content">
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
 
+<div id="article-share">
     
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
 
-<div id="tags" class="container chip-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">文章标签</div>
-            <div class="tag-chips">
-                
-                
-                <a href="/tags/vue/" title="vue: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="vue" style="background-color: #F9EBEA;">vue
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/vue-cli/" title="vue-cli: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="vue-cli" style="background-color: #F5EEF8;">vue-cli
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/vue-component/" title="vue-component: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="vue-component" style="background-color: #D5F5E3;">vue-component
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Docker/" title="Docker: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="Docker" style="background-color: #E8F8F5;">Docker
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/php/" title="php: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active " data-tagname="php" style="background-color: #FEF9E7;">php
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/OOP/" title="OOP: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="OOP" style="background-color: #F8F9F9;">OOP
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">转载请注明: </span>
+                    <a href="http://muzizhang.github.io" class="b-link-green">muzizhang</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2018/12/21/vue-zu-jian/" class="b-link-green">Vue-组件</a>
+                </p>
             </div>
         </div>
     </div>
-</div>
 
-    <div class="container">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
         
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="card">
+                <a href="/2018/12/21/vue-cli3/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Vue-CLI3">
+                        
+                        <span class="card-title">Vue-CLI3</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">vue-cli3介绍Vue CLI 是一个基于 Vue.js进行快速开发的完整系统，提供：
 
-        <article>
-            <div class="row tags-posts">
-                
-                
-                <div class="article tag-post col s12 m6 l4" data-tags="php, OOP" data-aos="fade-up">
-                    <div class="card">
-                        <a href="/2018/12/20/mian-xiang-dui-xiang-bian-cheng/">
-                            <div class="card-image tag-image">
-                                
-                                
-                                <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="面向对象编程">
-                                
-                                <span class="card-title">面向对象编程</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-20
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/面向对象/" class="post-category" target="_blank">
-                                    面向对象
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
+通过 @vue/cli 搭建交互式的项目脚手架
+一套完全图形化的创建和管理 Vue.js 项目的用户界面
+通过 @vue/cli + @vue/c</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-21
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Vue/" class="post-category" target="_blank">
+                                    Vue
+                                </a>
+                            
+                            
+                        </span>
                     </div>
                 </div>
                 
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/" target="_blank">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                    <a href="/tags/vue-cli/" target="_blank">
+                        <span class="chip bg-color">vue-cli</span>
+                    </a>
+                    
+                </div>
+                
             </div>
-        </article>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2018/12/20/mian-xiang-dui-xiang-bian-cheng/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="面向对象编程">
+                        
+                        <span class="card-title">面向对象编程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">面向对象编程编程方式：面向过程和面向对象
+OOP（面向对象程序设计）
+
+类和对象
+命名空间
+类的自动加载
+魔术方法
+静态成员
+异常
+继承
+
+类的三大特性：
+
+封装
+继承
+多态
+
+类
+一般类名首字母大写
+一个类对应一个文件，文件名和类名相同
+</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/面向对象/" class="post-category" target="_blank">
+                                    面向对象
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/php/" target="_blank">
+                        <span class="chip bg-color">php</span>
+                    </a>
+                    
+                    <a href="/tags/OOP/" target="_blank">
+                        <span class="chip bg-color">OOP</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
     </div>
+</article>
+</div>
+    
+
 </main>
 
 
